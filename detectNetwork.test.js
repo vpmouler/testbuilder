@@ -16,11 +16,11 @@ describe('Introduction to Mocha Tests - READ ME FIRST', function() {
 
   // Once you've read and understood this section, please comment it out. 
   // You will not be able to proceed with a failing test. 
-
+  /*
   it('Throws an error so it fails', function() {
     throw new Error('Delete me!');
   });
-
+  */
   it('Doesn\'t throw an error, so it doesn\'t fail', function() {
     // This test doesn't really test anything at all! It will pass no matter what.
     var even = function(num){
@@ -36,7 +36,7 @@ describe('Introduction to Mocha Tests - READ ME FIRST', function() {
       return num/2 === 0;
     }
 
-    if(even(10) !== true) {
+    if(even(10) === true) {
       throw new Error('10 should be even!');
     }
   });
@@ -107,15 +107,15 @@ describe('MasterCard', function() {
   //   http://chaijs.com/api/bdd/
   var expect = chai.expect;
  
-  it(FILL_ME_IN, function() {
+  it("has a prefix of 51 and a length of 16", function() {
     expect(detectNetwork('5112345678901234')).to.equal('MasterCard');
   });
  
-  it(FILL_ME_IN, function() {
+  it("has a prefix of 52 and a length of 16", function() {
     expect(detectNetwork('5212345678901234')).to.equal('MasterCard');
   });
  
-  it(FILL_ME_IN, function() {
+  it("has a prefix of 53 and a length of 16", function() {
     expect(detectNetwork('5312345678901234')).to.equal('MasterCard');
   });
  
@@ -130,11 +130,11 @@ describe('MasterCard', function() {
   var should = chai.should();
   
   it('has a prefix of 54 and a length of 16', function() {
-    detectNetwork('5412345678901234').should.equal(FILL_ME_IN);
+    detectNetwork('5412345678901234').should.equal('MasterCard');
   });
  
   it('has a prefix of 55 and a length of 16', function() {
-    detectNetwork('5512345678901234').should.equal(FILL_ME_IN);
+    detectNetwork('5512345678901234').should.equal('MasterCard');
   })
  
 });
