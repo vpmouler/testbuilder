@@ -19,13 +19,18 @@ var detectNetwork = function(cardNumber) {
   	return "Diner's Club";
   if (cardNumber.length == 16 && cardNumber.slice(0,2) >= 51 && cardNumber.slice(0,2) <= 55)
     return "MasterCard";
-  if (cardNumber[0] == 4 && cardNumber.length == 13 || cardNumber.length == 16 || cardNumber.length == 19)
+  if (cardNumber.slice(0,1) == 4 && cardNumber.length == 13 || cardNumber.length == 16 || cardNumber.length == 19)
     return "Visa"; // why is this returning visa when on top of mastercard?
   if (cardNumber.length === 16 || cardNumber.length === 19 && cardcardNumber.slice(0,4) == 6011 || cardNumber.slice(0,6) >= 622126 && cardNumber.slice(0,6) <= 622925 || cardNumber.slice(0,2) == 65 || cardNumber.slice(0,3) >= 644 && cardNumber.slice(0,3) <= 649) 
     return "Discover Card";
   if (cardNumber.length >= 12 && cardNumber.length <= 19 && cardNumber.slice(0,4) == '5018' || cardNumber.slice(0,4) == 5020 || cardNumber.slice(0,4) == 5038 || cardNumber.slice(0,4) == 6304)
     return "Maestro";
 };
+
+var visa = "4123456789012345678";
+
+console.log(detectNetwork(visa))
+
 /*
 var Maestro = '501819293918204'
 console.log(Maestro.slice(0,4) === 5018)
@@ -33,8 +38,8 @@ console.log(detectNetwork(Maestro))
 
 
 
-  if (cardNumber.slice(0,4) >= 3528 && cardNumber.slice(0,4) <= 3589)
-    return "JCB";
+  // if (cardNumber.slice(0,4) >= 3528 && cardNumber.slice(0,4) <= 3589)
+    // return "JCB";
 
 
 var MasterCard = "5512345678901234";
@@ -43,4 +48,5 @@ var visa = "4123456789012345678";
 console.log(detectNetwork(visa));
 
 console.log(visa[0])
+
 */
