@@ -17,13 +17,15 @@ var detectNetwork = function(cardNumber) {
   	return "American Express";
   if (cardNumber.length == 14 && cardNumber.slice(0,2) == 38 || cardNumber.slice(0,2) == 39)
   	return "Diner's Club";
+  if (cardNumber.slice(0,1) == 4 && cardNumber.length == 13 || cardNumber.length == 16 || cardNumber.length == 19)
+    return "Visa";
+  if (cardNumber.length == 16 && cardNumber.slice(0,2) >= 51 && cardNumber.slice(0,2) <= 55)
+    return "MasterCard";
 };
 
 /*
 if (cardNumber.slice(0,4) == 6011 || cardNumber.slice(0,6) >= 622126 && cardNumber.slice(0,6) <= 622925 || cardNumber.slice(0,2) == '65' || cardNumber.slice(0,3) >= 644 && cardNumber.slice(0,3) <= 649) 
     return "Discover Card";
-  if (cardNumber.slice(0,1) == 4)
-    return "Visa";
   if (cardNumber.slice(0,4) >= 3528 && cardNumber.slice(0,4) <= 3589)
     return "JCB";
-    */
+*/
